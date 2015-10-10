@@ -45,31 +45,27 @@ header a {
     margin: auto;
 }
 
-.music {
-    position: absolute;
-    top: 170px;
-    left: 55px;
-    border-radius: 3px;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    height: 30px;
-    border-color: rgb(0, 33, 98);
-
-}
-
-.stat-box {
-    position: absolute;
-    top: 285px;
-    left: 55px;
-}
-
-.stat-box div {
-    margin-top: 30px;
-}
-
-.stat-box p {
+.label {
     color: darkblue;
     font-size: 12px;
+}
+
+#one {
+    position: absolute;
+    top: 300px;
+    right: 45px;
+}
+
+#two {
+    position: absolute;
+    top: 375px;
+    right: 45px;
+}
+
+#three {
+    position: absolute;
+    top: 450px;
+    right: 45px;
 }
 
 .reset {
@@ -84,19 +80,14 @@ header a {
     background-size: 100% 100%;
 }
 
-#game_area {
+#game-area {
     height: 75vh;
-    width: 75vw;
+    width: 60vw;
     margin-left: 20vw;
 
 }
 
 .card {
-    position: relative;
-    transition: 1s;
-    transition-timing-function: linear;
-    -webkit-transition-timing-function: linear;
-    transform-style: preserve-3d;
     float: left;
     margin: 1vh 2vw;
 }
@@ -109,6 +100,7 @@ header a {
     width: 100%;
 }
 
+
 .front, .back {
     backface-visibility: hidden;
     position: absolute;
@@ -116,19 +108,19 @@ header a {
     left: 0;
 }
 
-.back {
-    transform: rotateY(180deg);
-    border-radius: 11px;
-}
+/*.front {*/
+    /*transform: rotateY(180deg);*/
+    /*border-radius: 11px;*/
+/*}*/
 
-.front {
-    z-index: 2;
-    transform: rotateY(0deg);
-}
+/*.back {*/
+    /*z-index: 2;*/
+    /*transform: rotateY(0deg);*/
+/*}*/
 
-.card:hover {
-    transform: rotateY(180deg);
-}
+/*.card:hover {*/
+    /*transform: rotateY(180deg);*/
+/*}*/
 
 /*@media screen and (max-width: 375px)  {*/
     /*#game_area {*/
