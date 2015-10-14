@@ -1,0 +1,148 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    padding: 0;
+    background: url('images/background.gif') no-repeat;
+    background-size: cover;
+    perspective: 1000px;
+
+}
+
+header {
+    background: url('images/doctorwho-logo.png')  no-repeat left 1vw top 100% /25% auto;
+    height: 20vh;
+}
+
+header h1 {
+    display: inline-block;
+    width: 50%;
+    margin: 14vh 0 0 20vw;
+    color: steelblue;
+    font-weight: 600;
+}
+
+header span, a {
+    float: right;
+    margin: 15px;
+}
+
+header span {
+    margin-top: 18px;
+}
+
+header a {
+    color: steelblue;
+}
+
+.stats-container {
+    background: url('images/stat-back.png') no-repeat left 100% center;
+    position: relative;
+    display: inline-block;
+    float: left;
+    height: 75vh;
+    width: 10vw;
+    margin: auto;
+}
+
+.label {
+    color: darkblue;
+    font-size: 12px;
+}
+
+#one {
+    position: absolute;
+    top: 300px;
+    right: 45px;
+}
+
+#two {
+    position: absolute;
+    top: 375px;
+    right: 45px;
+}
+
+#three {
+    position: absolute;
+    top: 450px;
+    right: 45px;
+}
+
+.reset {
+    position: absolute;
+    padding-top: 50px;
+    bottom: 100px;
+    right: 60px;
+    border-radius: 5px;
+    color: white;
+    height: 100px;
+    background-image: url("https://raw.githubusercontent.com/Kinarki/Doctor-Who-Match-Game/master/cardback.jpg");
+    background-size: 100% 100%;
+}
+
+#game-area {
+    height: 75vh;
+    width: 60vw;
+    margin-left: 20vw;
+
+}
+
+.card {
+    float: left;
+    margin: 1vh 2vw;
+}
+
+.card, .front, .back, .front img, .back img {
+    height: 20vh;
+}
+
+.front img, .back img {
+    width: 100%;
+}
+
+
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.profilepic {
+    position: absolute;
+    top: 10%;
+    left: 45%;
+    color: steelblue;
+}
+
+.profilepic img {
+    border-radius: 50%;
+}
+
+.content {
+    width: 100vw;
+    height: 75vh;
+}
+.about-sec, .skills-sec {
+    width: 45vw;
+    color: steelblue;
+    margin-top: 30vh;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 25%;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-sec {
+    float: left;
+
+}
+
+.skills-sec {
+    float: right;
+}
+
+.skills-sec ul {
+    list-style-type: none;
+}
+
