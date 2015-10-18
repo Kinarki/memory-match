@@ -12,9 +12,11 @@
 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-        <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
-
         <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script type="" src="myjs.js"></script>
+
+
     </head>
     <body>
         <!--                 Header                      -->
@@ -49,168 +51,164 @@
 
                  <!--          First Card Pair         -->
                 <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/first-doctor.png" alt="first doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
+
+                     <img src="images/first-doctor.png" alt="first doctor" class="front">
+
+                    <img src="images/back.png" alt="tardis" class="back" onclick="card_clicked(this)">
+
                 </div>
 
                 <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/first-doctor.png" alt="first doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
+
+                        <img src="images/first-doctor.png" alt="first doctor" class="front">
+
+                        <img src="images/back.png" alt="tardis" class="back" onclick="card_clicked(this)">
+
                 </div>
                 <!--         Second Card Pair      -->
                 <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/second-doctor.png" alt="second doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
+
+                        <img src="images/second-doctor.png"  class="front" alt="second doctor">
+
+                        <img src="images/back.png" alt="tardis" class="back"  onclick="card_clicked(this)">
+
                 </div>
 
                 <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/second-doctor.png" alt="second doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
+
+                        <img src="images/second-doctor.png" class="front" alt="second doctor">
+
+                        <img src="images/back.png" alt="tardis" class="back" onclick="card_clicked(this)">
+
                 </div>
                 <!--            Third Card Pair      -->
-                <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/third-doctor.png" alt="third doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
-                </div>
+                <!--<div class="card col-xs-2 col-md-1">-->
+                    <!--<div class="front">-->
+                        <!--<img src="images/third-doctor.png" alt="third doctor">-->
+                    <!--</div>-->
+                    <!--<div class="back">-->
+                        <!--<img src="images/back.png" alt="tardis">-->
+                    <!--</div>-->
+                <!--</div>-->
 
-                <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/third-doctor.png" alt="third doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
+                <!--<div class="card col-xs-2 col-md-1">-->
+                    <!--<div class="front">-->
+                        <!--<img src="images/third-doctor.png" alt="third doctor">-->
+                    <!--</div>-->
+                    <!--<div class="back">-->
+                        <!--<img src="images/back.png" alt="tardis">-->
+                    <!--</div>-->
 
-                </div>
-                <!--           Fourth Card Pair       -->
-                <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/fourth-dcotor.png" alt="fourth doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
-                </div>
+                <!--</div>-->
+                <!--&lt;!&ndash;           Fourth Card Pair       &ndash;&gt;-->
+                <!--<div class="card col-xs-2 col-md-1">-->
+                    <!--<div class="front">-->
+                        <!--<img src="images/fourth-dcotor.png" alt="fourth doctor">-->
+                    <!--</div>-->
+                    <!--<div class="back">-->
+                        <!--<img src="images/back.png" alt="tardis">-->
+                    <!--</div>-->
+                <!--</div>-->
 
-                <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/fourth-dcotor.png" alt="fourth doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
-                </div>
+                <!--<div class="card col-xs-2 col-md-1">-->
+                    <!--<div class="front">-->
+                        <!--<img src="images/fourth-dcotor.png" alt="fourth doctor">-->
+                    <!--</div>-->
+                    <!--<div class="back">-->
+                        <!--<img src="images/back.png" alt="tardis">-->
+                    <!--</div>-->
+                <!--</div>-->
                 <!--           Fifth Card Pair        -->
-                <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/fifth-dcotor.png" alt="fifth doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
-                </div>
+                <!--<div class="card col-xs-2 col-md-1">-->
+                    <!--<div class="front">-->
+                        <!--<img src="images/fifth-dcotor.png" alt="fifth doctor">-->
+                    <!--</div>-->
+                    <!--<div class="back">-->
+                        <!--<img src="images/back.png" alt="tardis">-->
+                    <!--</div>-->
+                <!--</div>-->
 
-                <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/fifth-dcotor.png" alt="fifth">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
-                </div>
-                <!--              Sixth Card Pair           -->
-                <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/ninth-doctor.png" alt="ninth doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
-                </div>
+                <!--<div class="card col-xs-2 col-md-1">-->
+                    <!--<div class="front">-->
+                        <!--<img src="images/fifth-dcotor.png" alt="fifth">-->
+                    <!--</div>-->
+                    <!--<div class="back">-->
+                        <!--<img src="images/back.png" alt="tardis">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;              Sixth Card Pair           &ndash;&gt;-->
+                <!--<div class="card col-xs-2 col-md-1">-->
+                    <!--<div class="front">-->
+                        <!--<img src="images/ninth-doctor.png" alt="ninth doctor">-->
+                    <!--</div>-->
+                    <!--<div class="back">-->
+                        <!--<img src="images/back.png" alt="tardis">-->
+                    <!--</div>-->
+                <!--</div>-->
 
-                <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/ninth-doctor.png" alt="ninth doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
+                <!--<div class="card col-xs-2 col-md-1">-->
+                    <!--<div class="front">-->
+                        <!--<img src="images/ninth-doctor.png" alt="ninth doctor">-->
+                    <!--</div>-->
+                    <!--<div class="back">-->
+                        <!--<img src="images/back.png" alt="tardis">-->
+                    <!--</div>-->
 
-                </div>
-                <!--              Seventh Card Pair              -->
-                <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/tenth-doctor.png" alt="tenth doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
-                </div>
+                <!--</div>-->
+                <!--&lt;!&ndash;              Seventh Card Pair              &ndash;&gt;-->
+                <!--<div class="card col-xs-2 col-md-1">-->
+                    <!--<div class="front">-->
+                        <!--<img src="images/tenth-doctor.png" alt="tenth doctor">-->
+                    <!--</div>-->
+                    <!--<div class="back">-->
+                        <!--<img src="images/back.png" alt="tardis">-->
+                    <!--</div>-->
+                <!--</div>-->
 
-                <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/tenth-doctor.png" alt="tenth doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
-                </div>
-                <!--              Eighth Card Pair           -->
-                <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/eleventh-doctor.png" alt="eleventh doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
-                </div>
+                <!--<div class="card col-xs-2 col-md-1">-->
+                    <!--<div class="front">-->
+                        <!--<img src="images/tenth-doctor.png" alt="tenth doctor">-->
+                    <!--</div>-->
+                    <!--<div class="back">-->
+                        <!--<img src="images/back.png" alt="tardis">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;              Eighth Card Pair           &ndash;&gt;-->
+                <!--<div class="card col-xs-2 col-md-1">-->
+                    <!--<div class="front">-->
+                        <!--<img src="images/eleventh-doctor.png" alt="eleventh doctor">-->
+                    <!--</div>-->
+                    <!--<div class="back">-->
+                        <!--<img src="images/back.png" alt="tardis">-->
+                    <!--</div>-->
+                <!--</div>-->
 
-                <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/eleventh-doctor.png" alt="eleventh doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
-                </div>
-                <!--            Ninth Card Pair            -->
-                <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/twelfth-doctor.png" alt="twelfth doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
-                </div>
+                <!--<div class="card col-xs-2 col-md-1">-->
+                    <!--<div class="front">-->
+                        <!--<img src="images/eleventh-doctor.png" alt="eleventh doctor">-->
+                    <!--</div>-->
+                    <!--<div class="back">-->
+                        <!--<img src="images/back.png" alt="tardis">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;            Ninth Card Pair            &ndash;&gt;-->
+                <!--<div class="card col-xs-2 col-md-1">-->
+                    <!--<div class="front">-->
+                        <!--<img src="images/twelfth-doctor.png" alt="twelfth doctor">-->
+                    <!--</div>-->
+                    <!--<div class="back">-->
+                        <!--<img src="images/back.png" alt="tardis">-->
+                    <!--</div>-->
+                <!--</div>-->
 
-                <div class="card col-xs-2 col-md-1">
-                    <div class="front">
-                        <img src="images/twelfth-doctor.png" alt="twelfth doctor">
-                    </div>
-                    <div class="back">
-                        <img src="images/back.png" alt="tardis">
-                    </div>
-                </div>
+                <!--<div class="card col-xs-2 col-md-1">-->
+                    <!--<div class="front">-->
+                        <!--<img src="images/twelfth-doctor.png" alt="twelfth doctor">-->
+                    <!--</div>-->
+                    <!--<div class="back">-->
+                        <!--<img src="images/back.png" alt="tardis">-->
+                    <!--</div>-->
+                <!--</div>-->
 
         </div>     <!-- end of game board  -->
 

@@ -88,12 +88,15 @@ header a {
 }
 
 .card {
+    height: 30%;
     float: left;
     margin: 1vh 2vw;
 }
 
-.card, .front, .back, .front img, .back img {
-    height: 20vh;
+.front, .back {
+    width: 100%;
+    float: left;
+    margin: 1vh 2vw;
 }
 
 .front img, .back img {
@@ -146,3 +149,6 @@ header a {
     list-style-type: none;
 }
 
+.hidden {
+    display: none;
+}
