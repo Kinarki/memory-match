@@ -3,14 +3,14 @@ body {
     height: 100vh;
     margin: auto;
     padding: 0;
-    background: url('images/background.gif') no-repeat;
+    background: url('') no-repeat;
     background-size: cover;
     perspective: 1000px;
 
 }
 
 header {
-    background: url('images/doctorwho-logo.png')  no-repeat left 1vw top 100% /25% auto;
+    background: url('')  no-repeat left 1vw top 100% /25% auto;
     height: 20vh;
 }
 
@@ -36,7 +36,6 @@ header a {
 }
 
 .stats-container {
-    background: url('images/stat-back.png') no-repeat left 100% center;
     position: relative;
     display: inline-block;
     float: left;
@@ -76,7 +75,7 @@ header a {
     border-radius: 5px;
     color: white;
     height: 100px;
-    background-image: url("https://raw.githubusercontent.com/Kinarki/Doctor-Who-Match-Game/master/cardback.jpg");
+    background-image: url("");
     background-size: 100% 100%;
 }
 

@@ -10,7 +10,7 @@ function card_clicked(card_element) {
     $(card_element).addClass('hidden');
 
     //targeting source for matching
-    var the_card = $(card_element).prev().attr('src');
+    var the_card = $(card_element).prev().attr('card_src');
 
     //checking if a card has been clicked yet
     if (first_card_clicked == null) {
@@ -35,7 +35,7 @@ function card_clicked(card_element) {
             setTimeout(function () {
 
                 //hides matched pairs
-                $("[src='" + the_card + "']").addClass('hidden');
+                $("[card_src='" + the_card + "']").addClass('hidden');
 
             }, 500);
 
@@ -61,7 +61,7 @@ function card_clicked(card_element) {
             setTimeout(function () {
 
                 //target the back image and removing class of first_card_click
-                $("img[src='" + first_card_clicked + "']").next('img').removeClass('hidden');
+                $("img[card_src='" + first_card_clicked + "']").next('img').removeClass('hidden');
 
                 //removing class of second_card_click
                 $(card_element).removeClass('hidden');
@@ -71,7 +71,7 @@ function card_clicked(card_element) {
                 second_card_clicked = null;
 
                 //enabling mouse clicks on the game board
-                $('#game-area').removeAttr('style')
+                $('#game-area').removeAttr('style');
 
                 return;
             }, 2000);
