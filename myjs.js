@@ -12,65 +12,69 @@ function card_clicked(card_element) {
     //targeting source for matching
     var the_card = $(card_element).prev().attr('src');
 
-        //checking if a card has been clicked yet
-        if(first_card_clicked == null) {
+    //checking if a card has been clicked yet
+    if (first_card_clicked == null) {
 
-            //saving first card for match comparison
-            first_card_clicked = the_card;
+        //saving first card for match comparison
+        first_card_clicked = the_card;
+
+        return;
+
+    } else {
+
+        //saving second card for comparison
+        second_card_clicked = the_card;
+
+        //checking for match
+        if (first_card_clicked == second_card_clicked) {
+
+            //incrementing match_counter for win condition comparison
+            match_counter++;
+
+            //allot time for player to see that they got a match
+            setTimeout(function () {
+
+                //hides matched pairs
+                $("[src='" + the_card + "']").addClass('hidden');
+
+            }, 500);
+
+            //win condition comparison
+            if (match_counter == total_possible_matches) {
+
+                //eric hates this
+                alert('You win!');
+
+            }
+            //resetting variables for next round of match finding.
+            first_card_clicked = null;
+            second_card_clicked = null;
+
+            return;
 
         } else {
+            //disable mouse clicks on the game board while two cards are face up
+            //works on all browsers save Opera Mini
+            $('#game-area').css('pointer-events', 'none');
 
-            //saving second card for comparison
-            second_card_clicked = the_card;
+            //function to reset cards
+            setTimeout(function () {
 
-            //checking for match
-            if(first_card_clicked == second_card_clicked) {
+                //target the back image and removing class of first_card_click
+                $("img[src='" + first_card_clicked + "']").next('img').removeClass('hidden');
 
-                //incrementing match_counter for win condition comparison
-                match_counter++;
+                //removing class of second_card_click
+                $(card_element).removeClass('hidden');
 
-                //allot time for player to see that they got a match
-                setTimeout(function(){
-
-                    //hides matched pairs
-                    $("[src='" + the_card+ "']").addClass('hidden');
-
-                },500);
-
-                //win condition comparison
-                if (match_counter == total_possible_matches) {
-
-                    //eric hates this
-                    alert('You win!');
-
-                }
-                //resetting variables for next round of match finding.
+                //resetting variables for next round of clicking.
                 first_card_clicked = null;
                 second_card_clicked = null;
 
-            } else {
-                //disable mouse clicks on the game board while two cards are face up
-                //works on all browsers save Opera Mini
-                $('#game-area').css('pointer-events', 'none');
+                //enabling mouse clicks on the game board
+                $('#game-area').removeAttr('style')
 
-                //function to reset cards
-                setTimeout(function(){
-
-                    //target the back image and removing class of first_card_click
-                    $("img[src='" + first_card_clicked + "']").next('img').removeClass('hidden');
-
-                    //removing class of second_card_click
-                    $(card_element).removeClass('hidden');
-
-                    //resetting variables for next round of clicking.
-                    first_card_clicked = null;
-                    second_card_clicked=null;
-
-                    //enabling mouse clicks on the game board
-                    $('#game-area').removeAttr('style')
-                },2000);
-
-            }
-
+                return;
+            }, 2000);
         }
+    }
 }
