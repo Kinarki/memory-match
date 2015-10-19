@@ -17,7 +17,26 @@ body {
     background-size:  cover;
     background-position-y: 50%;
     perspective: 1000px;
+    color: red;
 }
+
+.scare {
+    z-index: 4;
+    text-align: center;
+    position: absolute ;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.pop-up {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 5%;
+    top: 0;
+}
+
 
 header {
     width: 100%;
@@ -96,4 +115,32 @@ footer {
     background-color: black;
     color: red;
     display: inline-block;
+}
+
+.about-dead {
+    width: 30%;
+    float: right;
+    margin-right: 7%;
+    transform: rotateY(-30deg) rotateZ(2deg);
+}
+
+.graffiti {
+    float: right;
+    margin: 2%;
+    margin-right: 5%;
+    transform: rotateY(-60deg) rotateZ(2deg);
+
+}
+
+.rules {
+    clear: both;
+    text-align: center;
+    width: 15%;
+    float: right;
+    margin-right: 7%;
+    transform: rotateY(-50deg) rotateZ(2deg);
+}
+
+.rules li {
+    text-align: left;
 }

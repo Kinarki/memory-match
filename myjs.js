@@ -69,9 +69,11 @@ function reset(){
         }
     });
 
-    reset_stats();
+    first_card_clicked = null;
 
-    //display_stats();
+    second_card_clicked = null;
+
+    reset_stats();
 }
 
 //function to check for card matches
@@ -89,34 +91,44 @@ function card_clicked(card_element) {
         //saving first card for match comparison
         first_card_clicked = the_card;
 
-        return;
 
     } else {
         //saving second card for comparison
         second_card_clicked = the_card;
 
-        attempts++;
-
-
         //checking for match
         if (first_card_clicked == second_card_clicked) {
 
+            //loss condition
             if(second_card_clicked == 'cardZ') {
-                alert('Game over.  You\'ve been turned!');
-                setTimeout(function() {
-                    $('.front').removeClass('hidden');
+                setTimeout(function(){
+                //hide game area for pop-up zombie
+                $("#game-area").addClass('hidden');
+                //hide footer for pop-up zombie
+                $('.footer').addClass('hidden');
+                //show pop-up zombie
+                $(".pop-up").removeClass('hidden');
+                },500);
 
-                    $('.back').removeClass('hidden');
+                //reverting classes from previous timeout
+                setTimeout(function() {
+
+                    $("#game-area").removeClass('hidden');
+
+                    $('.footer').removeClass('hidden');
+
+                    $(".pop-up").addClass('hidden');
 
                     reset();
-                },1500);
 
+                },2000);
+             return;
             }
-
 
             //disable mouse clicks on the game board while two cards are face up
             //works on all browsers save Opera Mini
             $('#game-area').css('pointer-events', 'none');
+
 
             //incrementing matches for win condition comparison
             matches++;
@@ -151,9 +163,9 @@ function card_clicked(card_element) {
             first_card_clicked = null;
             second_card_clicked = null;
 
-            return;
 
         } else {
+
             //disable mouse clicks on the game board while two cards are face up
             //works on all browsers save Opera Mini
             $('#game-area').css('pointer-events', 'none');
@@ -175,9 +187,9 @@ function card_clicked(card_element) {
                 //enabling mouse clicks on the game board
                 $('#game-area').removeAttr('style');
 
-                return;
             }, 1250);
         }
+        attempts++;
         display_stats();
     }
 }
