@@ -3,151 +3,97 @@ body {
     height: 100vh;
     margin: auto;
     padding: 0;
-    background: url('') no-repeat;
+    background: url('images/walking-background.jpg') no-repeat;
     background-size: cover;
     perspective: 1000px;
+}
 
+.about {
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    padding: 0;
+    background: url('images/about-back.jpg') no-repeat;
+    background-size:  cover;
+    background-position-y: 50%;
+    perspective: 1000px;
 }
 
 header {
-    background: url('')  no-repeat left 1vw top 100% /25% auto;
-    height: 20vh;
+    width: 100%;
+    height: 15vh;
+    text-align: center;
 }
 
-header h1 {
-    display: inline-block;
-    width: 50%;
-    margin: 14vh 0 0 20vw;
-    color: steelblue;
-    font-weight: 600;
+.title-logo {
+    height: 150%;
 }
 
-header span, a {
+.game-settings, .game-about {
     float: right;
-    margin: 15px;
-}
-
-header span {
-    margin-top: 18px;
-}
-
-header a {
-    color: steelblue;
-}
-
-.stats-container {
-    position: relative;
-    display: inline-block;
-    float: left;
-    height: 75vh;
-    width: 10vw;
-    margin: auto;
-}
-
-.label {
-    color: darkblue;
-    font-size: 12px;
-}
-
-#one {
-    position: absolute;
-    top: 300px;
-    right: 45px;
-}
-
-#two {
-    position: absolute;
-    top: 375px;
-    right: 45px;
-}
-
-#three {
-    position: absolute;
-    top: 450px;
-    right: 45px;
-}
-
-.reset {
-    position: absolute;
-    padding-top: 50px;
-    bottom: 100px;
-    right: 60px;
-    border-radius: 5px;
-    color: white;
-    height: 100px;
-    background-image: url("");
-    background-size: 100% 100%;
+    margin: 1vw;
+    color: black;
+    font-weight: bold;
 }
 
 #game-area {
-    height: 75vh;
-    width: 60vw;
-    margin-left: 20vw;
+    height: 80vh;
+    width: 80vw;
+    margin-left: 10vw;
 
 }
 
 .card {
+    position: relative;
     height: 30%;
+    width: 8%;
     float: left;
-    margin: 1vh 2vw;
+    margin: 1vw;
 }
 
 .front, .back {
+    height: 100%;
     width: 100%;
-    float: left;
-    margin: 1vh 2vw;
+    border-radius: 15px;
 }
-
-.front img, .back img {
-    width: 100%;
-}
-
 
 .front, .back {
-    backface-visibility: hidden;
     position: absolute;
     top: 0;
     left: 0;
 }
 
-.profilepic {
-    position: absolute;
-    top: 10%;
-    left: 45%;
-    color: steelblue;
+.hidden {
+    display: none;
 }
 
-.profilepic img {
-    border-radius: 50%;
+.reset {
+    background-color: black;
+    color: red;
+    font-weight: bold;
+    border: none;
+    clear: both;
 }
 
-.content {
-    width: 100vw;
-    height: 75vh;
+.reset:visited {
+    border: 1px solid red;
 }
-.about-sec, .skills-sec {
-    width: 45vw;
-    color: steelblue;
-    margin-top: 30vh;
-    background-color: rgba(0,0,0,0.8);
-    border-radius: 25%;
-    padding: 20px;
+
+footer {
+    width: 100%;
+    height: 5vh;
     text-align: center;
 }
 
-.about-sec {
+.games-played, .attempts, .accuracy {
+    display: inline-block;
+    width: 25%;
     float: left;
 
 }
 
-.skills-sec {
-    float: right;
-}
-
-.skills-sec ul {
-    list-style-type: none;
-}
-
-.hidden {
-    display: none;
+#one, #two, #three {
+    background-color: black;
+    color: red;
+    display: inline-block;
 }
