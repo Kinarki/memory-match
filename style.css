@@ -121,13 +121,13 @@ footer {
     float: left;
     width: 15%;
     margin: 7% 0 0 7%;
-    transform: rotateY(30deg) rotateX(-10deg);
+    transform:  rotateY(78deg) rotateX(-22deg) rotateZ(-25deg);
 }
 
 .profile-pic {
     float: left;
     margin-top: 7%;
-    transform: rotateY(60deg) rotateX(-20deg) rotateZ(-15deg);
+    transform: rotateY(71deg) rotateX(-17deg) rotateZ(-22deg);
 
 }
 
@@ -135,14 +135,14 @@ footer {
     width: 30%;
     float: right;
     margin: 7% 7% 0 0;
-    transform: rotateY(-40deg) rotateZ(2deg);
+    transform: rotateY(-57deg) rotateX(-34deg) rotateZ(27deg);
 }
 
 
 .graffiti {
     float: right;
-    margin: 4% 2% 0 0;
-    transform: rotateY(-60deg) rotateZ(2deg);
+    margin: -3% 2% 0 0;
+    transform: rotateY(-72deg) rotateX(-15deg) rotateZ(22deg);
 
 }
 
@@ -151,8 +151,8 @@ footer {
     text-align: center;
     width: 15%;
     float: right;
-    margin:7% 7% 0 0;
-    transform: rotateY(-50deg) rotateZ(2deg);
+    margin:3% 7% 0 0;
+    transform: rotateY(-82deg) rotateX(-8deg) rotateZ(14deg);
 }
 
 .rules li {
@@ -161,5 +161,6 @@ footer {
 
 .links {
     clear: both;
+    display: inline-block;
     width: 30%;
 }
