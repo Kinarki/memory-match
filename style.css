@@ -117,17 +117,31 @@ footer {
     display: inline-block;
 }
 
+.skills {
+    float: left;
+    width: 15%;
+    margin: 7% 0 0 7%;
+    transform: rotateY(30deg) rotateX(-10deg);
+}
+
+.profile-pic {
+    float: left;
+    margin-top: 7%;
+    transform: rotateY(60deg) rotateX(-20deg) rotateZ(-15deg);
+
+}
+
 .about-dead {
     width: 30%;
     float: right;
-    margin-right: 7%;
-    transform: rotateY(-30deg) rotateZ(2deg);
+    margin: 7% 7% 0 0;
+    transform: rotateY(-40deg) rotateZ(2deg);
 }
+
 
 .graffiti {
     float: right;
-    margin: 2%;
-    margin-right: 5%;
+    margin: 4% 2% 0 0;
     transform: rotateY(-60deg) rotateZ(2deg);
 
 }
@@ -137,10 +151,15 @@ footer {
     text-align: center;
     width: 15%;
     float: right;
-    margin-right: 7%;
+    margin:7% 7% 0 0;
     transform: rotateY(-50deg) rotateZ(2deg);
 }
 
 .rules li {
     text-align: left;
+}
+
+.links {
+    clear: both;
+    width: 30%;
 }
