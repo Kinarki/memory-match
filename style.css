@@ -120,13 +120,13 @@ footer {
 .skills {
     float: left;
     width: 15%;
-    margin: 7% 0 0 7%;
-    transform:  rotateY(78deg) rotateX(-22deg) rotateZ(-25deg);
+    margin: 7% 0 0 10%;
+    transform:  rotateY(82deg) rotateX(-22deg) rotateZ(-25deg);
 }
 
 .profile-pic {
     float: left;
-    margin-top: 7%;
+    margin: 5% 0 0 5%;
     transform: rotateY(71deg) rotateX(-17deg) rotateZ(-22deg);
 
 }
@@ -160,7 +160,20 @@ footer {
 }
 
 .links {
+    margin-left: 32%;
     clear: both;
+    float: left;
     display: inline-block;
-    width: 30%;
+    width: 15%;
+    transform: rotateY(55deg) rotateX(-8deg) rotateZ(-16deg);
+}
+
+.links> span, a {
+    padding-right: 5%;
+    color: red;
+}
+
+.creeper {
+    float: right;
+    transform: rotateX(-35deg);
 }
