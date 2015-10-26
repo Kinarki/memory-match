@@ -124,6 +124,10 @@ footer {
     transform:  rotateY(82deg) rotateX(-22deg) rotateZ(-25deg);
 }
 
+.skills:hover {
+    transform: rotateY(0deg);
+}
+
 .profile-pic {
     float: left;
     margin: 5% 0 0 5%;
@@ -138,6 +142,9 @@ footer {
     transform: rotateY(-57deg) rotateX(-34deg) rotateZ(27deg);
 }
 
+.about-dead:hover {
+    transform: rotateY(0deg);
+}
 
 .graffiti {
     float: right;
@@ -153,6 +160,10 @@ footer {
     float: right;
     margin:3% 7% 0 0;
     transform: rotateY(-82deg) rotateX(-8deg) rotateZ(14deg);
+}
+
+.rules:hover {
+    transform: rotateY(0deg);
 }
 
 .rules li {
