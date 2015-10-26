@@ -20,14 +20,23 @@ body {
     color: red;
 }
 
-.scare {
-    z-index: 4;
-    text-align: center;
-    position: absolute ;
-    width: 100%;
-    height: 100%;
-    display: none;
+.start {
+    color: red;
+    background-color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15% 0 0 47%;
 }
+
+/*.scare {*/
+    /*z-index: 4;*/
+    /*text-align: center;*/
+    /*position: absolute ;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*display: none;*/
+/*}*/
 
 .pop-up {
     width: 100%;

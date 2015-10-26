@@ -7,6 +7,15 @@ var accuracy = 0;
 var games_played = 0;
 
 
+function start() {
+
+    $('.start').addClass('hidden');
+
+    $("#game-area").removeClass('hidden');
+
+    $('.footer').removeClass('hidden');
+}
+
 //randomize cards
 $(function () {
 
