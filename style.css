@@ -117,17 +117,13 @@ footer {
     text-align: center;
 }
 
-.games-played, .attempts, .accuracy {
-    display: inline-block;
-    width: 25%;
-    float: left;
-
-}
-
-#one, #two, #three {
+#one, #two, #three, #four {
     background-color: black;
     color: red;
     display: inline-block;
+
+    width: 15%;
+    float: left;
 }
 
 .skills {

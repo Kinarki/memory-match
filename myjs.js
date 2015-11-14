@@ -5,9 +5,12 @@ var matches = 0;
 var attempts =  0;
 var accuracy = 0;
 var games_played = 0;
+var current_time = 45;
+var interval;
+var audio = new Audio('audio/theme.mp3');
+var music_flag = false;
 
-
-
+//shows gameboard and stats.
 function start() {
 
     $('.start').addClass('hidden');
@@ -15,6 +18,33 @@ function start() {
     $("#game-area").removeClass('hidden');
 
     $('.footer').removeClass('hidden');
+}
+//timer function
+function tick() {
+    --current_time;
+    $('.timer .value').text(" " + current_time);
+
+    //if (current_time <= 10) {
+    //
+    //}
+    if (current_time === 0) {
+        turned();
+    }
+}
+
+$('#game-area').one('click', interval = setInterval(function() {
+    tick();
+}, 1000));
+
+function resetInterval() {
+
+    clearInterval(interval);
+
+    current_time = 45;
+
+    interval = setInterval(function () {
+        tick();
+    }, 1000);
 }
 
 //randomize cards
@@ -29,40 +59,52 @@ $(function () {
     }
 });
 
-//music play/stop button
 $(document).ready(function(){
+    //music play/stop button
     $('.music').on('click', function() {
         $('.music').toggle();
     });
 
     $('#music').on('click', function(){
-        audio = new Audio('audio/theme.mp3');
         audio.play();
+        music_flag = true;
     });
 
     $('#cisum').on('click', function(){
-
         audio.pause();
+        music_flag = false;
     });
+
+
 });
 //calculate accuracy
 function accuracyScore() {
 
     var accuracy = (matches/ attempts) * 100;
 
-    accuracy = accuracy.toFixed(2);
+    accuracy = accuracy.toFixed(0);
 
-    return accuracy + '%';
+    if(isNaN(accuracy)) {
+        $('.accuracy .value').text(0 + '%');
+
+    } else {
+        $('.accuracy .value').text(accuracy + '%');
+    }
+
+    //return accuracy + '%';
 }
 
 //display stats when called
 function display_stats() {
 
-    $('.games-played .value').html(" " + games_played);
+    $('.games-played .value').text(" " + games_played);
 
-    $(".attempts .value").html(" " + attempts);
+    $(".attempts .value").text(" " + attempts);
 
-     $('.accuracy .value').html(" " + accuracyScore());
+    accuracyScore();
+    // $('.accuracy .value').text(" " + accuracyScore());
+
+    $('.timer .value').text(" " + current_time);
 }
 
 //reset statistics
@@ -72,8 +114,19 @@ function reset_stats () {
     matches = 0;
     attempts = 0;
 
+    first_card_clicked = null;
+    second_card_clicked = null;
+    current_time = 45;
+
+    audio.pause();
+    if (music_flag === true) {
+        $('.music').toggle();
+        music_flag = false;
+    }
+
     display_stats();
 
+    resetInterval();
 }
 
 // reset button
@@ -88,7 +141,6 @@ function reset(){
     $(function () {
 
         var parent = $('#game-area');
-
         var divs = parent.children();
 
         while(divs.length){
@@ -96,11 +148,31 @@ function reset(){
         }
     });
 
-    first_card_clicked = null;
-
-    second_card_clicked = null;
-
     reset_stats();
+}
+
+function turned() {
+    setTimeout(function(){
+        //hide game area for pop-up zombie
+        $("#game-area").addClass('hidden');
+        //hide footer for pop-up zombie
+        $('.footer').addClass('hidden');
+        //show pop-up zombie
+        $(".pop-up").removeClass('hidden');
+    },500);
+
+    //reverting classes from previous timeout
+    setTimeout(function() {
+
+        $("#game-area").removeClass('hidden');
+
+        $('.footer').removeClass('hidden');
+
+        $(".pop-up").addClass('hidden');
+
+        reset();
+
+    },2000);
 }
 
 //function to check for card matches
@@ -128,27 +200,28 @@ function card_clicked(card_element) {
 
             //loss condition
             if(second_card_clicked == 'cardZ') {
-                setTimeout(function(){
-                //hide game area for pop-up zombie
-                $("#game-area").addClass('hidden');
-                //hide footer for pop-up zombie
-                $('.footer').addClass('hidden');
-                //show pop-up zombie
-                $(".pop-up").removeClass('hidden');
-                },500);
-
-                //reverting classes from previous timeout
-                setTimeout(function() {
-
-                    $("#game-area").removeClass('hidden');
-
-                    $('.footer').removeClass('hidden');
-
-                    $(".pop-up").addClass('hidden');
-
-                    reset();
-
-                },2000);
+                //setTimeout(function(){
+                ////hide game area for pop-up zombie
+                //$("#game-area").addClass('hidden');
+                ////hide footer for pop-up zombie
+                //$('.footer').addClass('hidden');
+                ////show pop-up zombie
+                //$(".pop-up").removeClass('hidden');
+                //},500);
+                //
+                ////reverting classes from previous timeout
+                //setTimeout(function() {
+                //
+                //    $("#game-area").removeClass('hidden');
+                //
+                //    $('.footer').removeClass('hidden');
+                //
+                //    $(".pop-up").addClass('hidden');
+                //
+                //    reset();
+                //
+                //},2000);
+                turned();
              return;
             }
 
