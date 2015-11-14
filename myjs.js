@@ -19,10 +19,9 @@ function start() {
 }
 //timer function
 function tick() {
-    //if (time === true) {
     --current_time;
     $('.timer .value').html(" " + current_time);
-    //}
+
     //if (current_time <= 10) {
     //
     //}
@@ -32,18 +31,9 @@ function tick() {
 
 }
 
-//$('#game-area').one('click', interval = setInterval(function() {
-//    //time = true;
-//    tick();
-//}, 1000));
-
 function resetInterval() {
     clearInterval(interval);
     current_time = 45;
-
-    //interval = setInterval(function () {
-    //    tick();
-    //}, 1000);
 }
 
 //randomize cards
@@ -92,7 +82,6 @@ function accuracyScore() {
 function display_stats() {
     $('.games-played .value').html(" " + games_played);
     $(".attempts .value").html(" " + attempts);
-    accuracyScore();
     $('.timer .value').html(" " + current_time);
 }
 
@@ -155,6 +144,7 @@ function turned() {
 
 //function to check for card matches
 function card_clicked(card_element) {
+    accuracyScore();
     //starts count down
     if (time_start === false) {
         interval = setInterval(function() {

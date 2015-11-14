@@ -4,7 +4,7 @@ body {
     margin: auto;
     padding: 0;
     background: url('images/walking-background.jpg') no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     perspective: 1000px;
 }
 
@@ -121,8 +121,7 @@ footer {
     background-color: black;
     color: red;
     display: inline-block;
-
-    width: 15%;
+    width: 20%;
     float: left;
 }
 
