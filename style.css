@@ -95,7 +95,7 @@ header {
     display: none;
 }
 
-.reset {
+.reset, .music {
     background-color: black;
     color: red;
     font-weight: bold;
@@ -103,8 +103,12 @@ header {
     clear: both;
 }
 
-.reset:visited {
-    border: 1px solid red;
+.music {
+    margin-left: 30px;
+}
+
+.reset:focus, .start:focus, .music:focus {
+    outline-color: red;
 }
 
 footer {
@@ -197,3 +201,5 @@ footer {
     float: right;
     transform: rotateX(-35deg);
 }
+
+

@@ -6,7 +6,7 @@ header h1{
 }
 
 #game-area{
-    font-size: 0px;
+    font-size: 0;
 }
 #game-area .card{
     height:200px;

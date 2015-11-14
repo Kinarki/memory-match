@@ -7,6 +7,7 @@ var accuracy = 0;
 var games_played = 0;
 
 
+
 function start() {
 
     $('.start').addClass('hidden');
@@ -28,8 +29,25 @@ $(function () {
     }
 });
 
+//music play/stop button
+$(document).ready(function(){
+    $('.music').on('click', function() {
+        $('.music').toggle();
+    });
+
+    $('#music').on('click', function(){
+        audio = new Audio('audio/theme.mp3');
+        audio.play();
+    });
+
+    $('#cisum').on('click', function(){
+
+        audio.pause();
+    });
+});
 //calculate accuracy
 function accuracyScore() {
+
     var accuracy = (matches/ attempts) * 100;
 
     accuracy = accuracy.toFixed(2);
@@ -44,7 +62,7 @@ function display_stats() {
 
     $(".attempts .value").html(" " + attempts);
 
-    $('.accuracy .value').html(" " +  accuracyScore());
+     $('.accuracy .value').html(" " + accuracyScore());
 }
 
 //reset statistics

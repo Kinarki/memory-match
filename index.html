@@ -10,10 +10,9 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="style.css">
-
         <script src="myjs.js"></script>
 
+        <link rel="stylesheet" type="text/css" href="style.css">
 
     </head>
     <body>
@@ -215,11 +214,12 @@
             </div>
             <!--        Accuracy Counter     -->
             <div class="accuracy">
-                <p class="label" id="three">Accuracy: <span class="value"></span></p>
+                <p class="label" id="three">Accuracy: <span class="value">0</span></p>
             </div>
             <!--              Reset Button               -->
             <button class="reset" type="reset" value="Reset" onclick="reset()">Reset Game</button>
-
+            <button class="music" id="music">Start Music</button>
+            <button class="music" id="cisum" style="display:none;">Stop Music</button>
         </footer>
 
     </body>
