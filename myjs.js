@@ -110,6 +110,7 @@ function reset(){
     games_played++;
     $('.front').removeClass('hidden');
     $('.back').removeClass('hidden');
+    //$('.card').removeClass('flip');
 
     $(function () {
         var parent = $('#game-area');
@@ -152,6 +153,19 @@ function card_clicked(card_element) {
         }, 1000);
         time_start = true;
     }
+
+
+
+    //$(this).parent().addClass('flip');
+
+
+
+
+
+
+
+
+
     //hiding the back image
     $(card_element).addClass('hidden');
     //targeting source for matching
@@ -188,20 +202,32 @@ function card_clicked(card_element) {
                 alert('You win!');
 
                 setTimeout(function() {
-                    $('.front').removeClass('hidden');
-                    $('.back').removeClass('hidden');
                     reset();
                 },1500);
             }
             //resetting variables for next round of match finding.
             first_card_clicked = null;
             second_card_clicked = null;
+
+
+
+            //$('.card').removeClass('.flip');
+
+
+
         } else {
             //disable mouse clicks on the game board while two cards are face up
             //works on all browsers save Opera Mini
             $('#game-area').css('pointer-events', 'none');
             //function to reset cards
             setTimeout(function () {
+
+                //$('.card').removeClass('flip');
+
+
+
+
+
                 //target the back image and removing class of first_card_click
                 $("img[card_src='" + first_card_clicked + "']").next('img').removeClass('hidden');
                 //removing class of second_card_click

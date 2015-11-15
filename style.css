@@ -68,6 +68,8 @@ header {
     height: 80vh;
     width: 80vw;
     margin-left: 10vw;
+    transition: 2s;
+    transform-style: preserve-3d;
 
 }
 
@@ -77,18 +79,31 @@ header {
     width: 8%;
     float: left;
     margin: 1vw;
+    /*transition: 0.6s;*/
+    /*transform-style: preserve-3d;*/
 }
 
 .front, .back {
     height: 100%;
     width: 100%;
     border-radius: 15px;
-}
-
-.front, .back {
+    /*backface-visibility: hidden;*/
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.back {
+    /*z-index: 2;*/
+    transform: rotateY(0deg);
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+.flip {
+    transform: rotateY(180deg);
 }
 
 .hidden {
@@ -196,5 +211,3 @@ footer {
     float: right;
     transform: rotateX(-35deg);
 }
-
-
