@@ -21,183 +21,112 @@
             <div class="game-settings"><span class="glyphicon glyphicon-cog"></span></div><!-- settings -->
             <a href="about.html" class="game-about">About</a>
         </header>
+
         <!--       Start button              -->
         <button class="start" onclick="start()">Start Game</button>
         <!--       Game ending surprise      -->
         <img src="images/scare.png" alt="zombie scare" class="pop-up hidden"><h1 class="pop-up hidden">You've been turned!</h1>
-        <!--       Game win pop-up          -->
+        <!--       Game win pop-up           -->
         <img src="images/safe-zone.png" alt="Alexandria" class="safe-zone hidden">
 
         <!--                Game Board              -->
-        <div id="game-area" class="container game-area hidden" ontouchstart="this.classList.toggle('hover');">
+        <div id="game-area" class="container-fluid game-area hidden" ontouchstart="this.classList.toggle('hover');">
 
                  <!--          First Card Pair         -->
                 <div class="card">
-
                      <img src="images/rick.jpg" alt="Rick" class="front" card_src="card1">
-
-                    <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
+                     <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
                 </div>
-
                 <div class="card">
-
                         <img src="images/rick.jpg" alt="Rick" class="front" card_src="card1">
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
                 </div>
+
                 <!--         Second Card Pair      -->
                 <div class="card">
-
                         <img src="images/carl.jpg"  class="front" alt="Carl" card_src="card2">
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back"  onclick="card_clicked(this)">
-
                 </div>
-
                 <div class="card">
-
                         <img src="images/carl.jpg" class="front" alt="carl" card_src="card2">
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
                 </div>
-                <!--            Third Card Pair            -->
-                <div class="card">
 
+                <!--        Third Card Pair            -->
+                <div class="card">
                         <img src="images/darryl.jpg" alt="Darryl" class="front" card_src="card3">
-
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
                 </div>
-
                 <div class="card">
-
                         <img src="images/darryl.jpg" alt="Darryl" class="front" card_src="card3">
-
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
-
                 </div>
-                <!--           Fourth Card Pair       -->
-                <div class="card">
 
+                <!--         Fourth Card Pair       -->
+                <div class="card">
                         <img src="images/carol.jpg" alt="Carol" class="front" card_src="card4">
-
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
                 </div>
-
                 <div class="card">
-
                         <img src="images/carol.jpg" alt="Carol" class="front" card_src="card4">
-
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
                 </div>
-                <!--           Fifth Card Pair          -->
-                <div class="card">
 
+                <!--        Fifth Card Pair          -->
+                <div class="card">
                         <img src="images/glenn.jpg" alt="glenn" class="front" card_src="card5">
-
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
                 </div>
-
                 <div class="card">
-
                         <img src="images/glenn.jpg" alt="glenn" class="front" card_src="card5">
-
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
                 </div>
-                <!--              Sixth Card Pair           -->
-                <div class="card">
 
+                <!--         Sixth Card Pair           -->
+                <div class="card">
                         <img src="images/maggie.jpg" alt="maggie" class="front" card_src="card6">
-
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
                 </div>
-
                 <div class="card">
-
                         <img src="images/maggie.jpg" alt="maggie" class="front" card_src="card6">
-
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
-
                 </div>
-                <!--              Seventh Card Pair              -->
-                <div class="card">
 
+                <!--         Seventh Card Pair              -->
+                <div class="card">
                         <img src="images/michonne.jpg" alt="michonne" class="front" card_src="card7">
-
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
                 </div>
-
                 <div class="card">
-
                         <img src="images/michonne.jpg" alt="michonne" class="front" card_src="card7">
-
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
                 </div>
-                <!--              Zombie cards          -->
-                <div class="card">
 
+                <!--           Zombie cards          -->
+                <div class="card">
                         <img src="images/zombie1.jpg" alt="zombie" class="front" card_src="cardZ">
-
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
                 </div>
-                 <!--            Zombie          -->
+                 <!--          Zombie          -->
                 <div class="card">
-
                         <img src="images/zombie2.jpg" alt="zombie" class="front" card_src="cardZ">
-
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
                 </div>
-                <!--            Zombie          -->
+                <!--           Zombie          -->
                 <div class="card">
-
                         <img src="images/zombie3.jpg" alt="zombie" class="front" card_src="cardZ">
-
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
                 </div>
-                 <!--            Zombie          -->
+                 <!--          Zombie          -->
                 <div class="card">
-
                         <img src="images/zombie4.jpg" alt="zombie" class="front" card_src="cardZ">
-
-
                         <img src="images/card-back.jpg" alt="warning - don't open, dead inside" class="back" onclick="card_clicked(this)">
-
                 </div>
 
         </div>     <!-- end of game board  -->
 
         <footer class="footer hidden">
-
             <!--                Statistics              -->
-
             <!--     Games Played Counter    -->
             <div class="games-played">
                 <p class="label" id="one">Games played: <span class="value">0</span></p>

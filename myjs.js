@@ -68,6 +68,7 @@ $(document).ready(function(){
 
     $('#cisum').on('click', function(){
         audio.pause();
+        audio.currentTime = 0;
         music_flag = false;
     });
 
@@ -105,6 +106,7 @@ function reset_stats () {
     time_start = false;
 
     audio.pause();
+    audio.currentTime = 0;
     if (music_flag === true) {
         $('.music').toggle();
         music_flag = false;
@@ -229,6 +231,7 @@ function card_clicked(card_element) {
             if (matches == total_possible_matches) {
                 resetInterval();
                 setTimeout(function() {
+                    audio.pause();
                     //hide game area for pop-up zombie
                     $("#game-area").addClass('hidden');
                     //hide footer for pop-up zombie
