@@ -17,22 +17,16 @@
     </head>
     <body>
         <header>
-
             <img src="images/matching-dead-logo.png" alt="Matching Dead" class="title-logo">
-
             <div class="game-settings"><span class="glyphicon glyphicon-cog"></span></div><!-- settings -->
-
             <a href="about.html" class="game-about">About</a>
-
         </header>
-
         <!--       Start button              -->
         <button class="start" onclick="start()">Start Game</button>
-
         <!--       Game ending surprise      -->
-
         <img src="images/scare.png" alt="zombie scare" class="pop-up hidden"><h1 class="pop-up hidden">You've been turned!</h1>
-
+        <!--       Game win pop-up          -->
+        <img src="images/safe-zone.png" alt="Alexandria" class="safe-zone hidden">
 
         <!--                Game Board              -->
         <div id="game-area" class="container game-area hidden" ontouchstart="this.classList.toggle('hover');">

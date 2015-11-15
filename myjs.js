@@ -10,6 +10,16 @@ var current_time = 45;
 var interval;
 var audio = new Audio('audio/theme.mp3');
 var music_flag = false;
+//var audio_array = [];
+var zombie_scare = new Audio('audio/zombie2.mp3');
+var win_audio = new Audio('audio/we-are.mp3');
+var rick = new Audio('audio/Rick.mp3');
+var carl = new Audio('audio/Carl.mp3');
+var carol = new Audio('audio/Carol.mp3');
+var darryl = new Audio('audio/Darryl.mp3');
+var glenn = new Audio('audio/Glenn.mp3');
+var maggie = new Audio('audio/Maggie.mp3');
+var michonne = new Audio('audio/Michonne.mp3');
 
 //shows gameboard and stats.
 function start() {
@@ -33,7 +43,6 @@ function tick() {
 
 function resetInterval() {
     clearInterval(interval);
-    current_time = 45;
 }
 
 //randomize cards
@@ -131,6 +140,7 @@ function turned() {
         $('.footer').addClass('hidden');
         //show pop-up zombie
         $(".pop-up").removeClass('hidden');
+        zombie_scare.play();
     },500);
 
     //reverting classes from previous timeout
@@ -160,12 +170,6 @@ function card_clicked(card_element) {
 
 
 
-
-
-
-
-
-
     //hiding the back image
     $(card_element).addClass('hidden');
     //targeting source for matching
@@ -179,6 +183,31 @@ function card_clicked(card_element) {
         second_card_clicked = the_card;
         //checking for match
         if (first_card_clicked == second_card_clicked) {
+            //audio
+            switch(the_card) {
+                case 'card1':
+                    rick.play();
+                    break;
+                case 'card2':
+                    carl.play();
+                    break;
+                case 'card3':
+                    darryl.play();
+                    break;
+                case 'card4':
+                    carol.play();
+                    break;
+                case 'card5':
+                    glenn.play();
+                    break;
+                case 'card6':
+                    maggie.play();
+                    break;
+                case 'card7':
+                    michonne.play();
+                    break;
+            }
+
             //loss condition
             if(second_card_clicked == 'cardZ') {
                 turned();
@@ -195,15 +224,25 @@ function card_clicked(card_element) {
                 $("[card_src='" + the_card + "']").addClass('hidden');
                 //enabling mouse clicks on the game board
                 $('#game-area').removeAttr('style');
-            }, 500);
+            }, 1500);
             //win condition comparison
             if (matches == total_possible_matches) {
-                //eric hates this
-                alert('You win!');
-
+                resetInterval();
                 setTimeout(function() {
+                    //hide game area for pop-up zombie
+                    $("#game-area").addClass('hidden');
+                    //hide footer for pop-up zombie
+                    $('.footer').addClass('hidden');
+                    //show safe-zone image and play audio
+                    $('.safe-zone').removeClass('hidden');
+                    win_audio.play();
+                    }, 2000);
+                setTimeout(function() {
+                    $("#game-area").removeClass('hidden');
+                    $('.footer').removeClass('hidden');
+                    $('.safe-zone').addClass('hidden');
                     reset();
-                },1500);
+                },4500);
             }
             //resetting variables for next round of match finding.
             first_card_clicked = null;
@@ -237,7 +276,7 @@ function card_clicked(card_element) {
                 second_card_clicked = null;
                 //enabling mouse clicks on the game board
                 $('#game-area').removeAttr('style');
-            }, 1250);
+            }, 1000);
         }
         attempts++;
         display_stats();

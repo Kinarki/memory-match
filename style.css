@@ -26,17 +26,8 @@ body {
     border: none;
     padding: 10px;
     border-radius: 5px;
-    margin: 15% 0 0 47%;
+    margin: 15% 0 0 46%;
 }
-
-/*.scare {*/
-    /*z-index: 4;*/
-    /*text-align: center;*/
-    /*position: absolute ;*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*display: none;*/
-/*}*/
 
 .pop-up {
     width: 100%;
@@ -44,6 +35,13 @@ body {
     position: fixed;
     left: 5%;
     top: 0;
+}
+
+.safe-zone {
+    width: 50%;
+    position: relative;
+    transform: translate(47%, 5%);
+    border-radius: 5px;
 }
 
 
@@ -55,6 +53,8 @@ header {
 
 .title-logo {
     height: 150%;
+    left: 4%;
+    position: relative;
 }
 
 .game-settings, .game-about {
@@ -70,7 +70,6 @@ header {
     margin-left: 10vw;
     transition: 2s;
     transform-style: preserve-3d;
-
 }
 
 .card {
@@ -93,18 +92,18 @@ header {
     left: 0;
 }
 
-.back {
-    /*z-index: 2;*/
-    transform: rotateY(0deg);
-}
+/*.back {*/
+    /*/!*z-index: 2;*!/*/
+    /*transform: rotateY(0deg);*/
+/*}*/
 
-.front {
-    transform: rotateY(180deg);
-}
+/*.front {*/
+    /*transform: rotateY(180deg);*/
+/*}*/
 
-.flip {
-    transform: rotateY(180deg);
-}
+/*.flip {*/
+    /*transform: rotateY(180deg);*/
+/*}*/
 
 .hidden {
     display: none;
