@@ -136,6 +136,7 @@ function reset(){
 
 function turned() {
     setTimeout(function(){
+        audio.pause();
         //hide game area for pop-up zombie
         $("#game-area").addClass('hidden');
         //hide footer for pop-up zombie
