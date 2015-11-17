@@ -5,9 +5,10 @@ var matches = 0;
 var attempts =  0;
 var accuracy = 0;
 var games_played = 0;
-var time_start = false;
+var time_start = true;
 var current_time = 60;
 var interval;
+var lastClick = '';
 var audio = new Audio('audio/theme.mp3');
 var music_flag = false;
 //var audio_array = [];
@@ -103,7 +104,7 @@ function reset_stats () {
     current_time = 60;
     first_card_clicked = null;
     second_card_clicked = null;
-    time_start = false;
+    time_start = true;
 
     audio.pause();
     audio.currentTime = 0;
@@ -157,27 +158,44 @@ function turned() {
 
 //function to check for card matches
 function card_clicked(card_element) {
+
+    //calling the accuracy to be updated per click
     accuracyScore();
+
     //starts count down
-    if (time_start === false) {
+    if (time_start) {
         interval = setInterval(function() {
             tick();
         }, 1000);
-        time_start = true;
+        time_start = false;
     }
+
+    //prevents spam clicks on first card
+    if(lastClick == card_element) {
+        return;
+    }
+    lastClick = card_element;
+
     //$(card_element).addClass('.flip');
     $(card_element).parent().addClass('flip');
+
     //targeting source for matching
     var the_card = $(card_element).prev().attr('card_src');
+
     //checking if a card has been clicked yet
     if (first_card_clicked == null) {
+
         //saving first card for match comparison
         first_card_clicked = the_card;
+
     } else {
+
         //saving second card for comparison
         second_card_clicked = the_card;
+
         //checking for match
         if (first_card_clicked == second_card_clicked) {
+
             //audio
             setTimeout(function(){
             switch(the_card) {
@@ -204,43 +222,60 @@ function card_clicked(card_element) {
                     break;
             }
         }, 500);
+
             //loss condition
             if(second_card_clicked == 'cardZ') {
                 turned();
              return;
             }
+
             //disable mouse clicks on the game board while two cards are face up
             //works on all browsers save Opera Mini
             $('#game-area').css('pointer-events', 'none');
+
             //incrementing matches for win condition comparison
             matches++;
+
             //allot time for player to see that they got a match
             setTimeout(function () {
                 //hides matched pairs
                 $("[card_src='" + the_card + "']").addClass('hidden');
+
                 //hiding the back image
                 $("img[card_src='" + first_card_clicked + "']").next('img').addClass('hidden');
+
                 //$(card_element).addClass('hidden');
                 //enabling mouse clicks on the game board
                 $('#game-area').removeAttr('style');
             }, 1500);
+
             //win condition comparison
             if (matches == total_possible_matches) {
+
                 resetInterval();
+
                 setTimeout(function() {
                     audio.pause();
+
                     //hide game area for pop-up zombie
                     $("#game-area").addClass('hidden');
+
                     //hide footer for pop-up zombie
                     $('.footer').addClass('hidden');
+
                     //show safe-zone image and play audio
                     $('.safe-zone').removeClass('hidden');
                     }, 2000);
+
                 setTimeout(function() {
                     $("#game-area").removeClass('hidden');
+
                     $('.footer').removeClass('hidden');
+
                     $('.safe-zone').addClass('hidden');
+
                     win_audio.play();
+
                     $('.card').removeClass('flip');
                     reset();
                 },6500);
@@ -248,24 +283,31 @@ function card_clicked(card_element) {
             //resetting variables for next round of match finding.
             first_card_clicked = null;
             second_card_clicked = null;
+
         } else {
+
             //disable mouse clicks on the game board while two cards are face up
             //works on all browsers save Opera Mini
             $('#game-area').css('pointer-events', 'none');
+
             //function to reset cards
             setTimeout(function () {
                 //target the back image and removing class of first_card_click
                 $("img[card_src='" + first_card_clicked + "']").next('img').parent().removeClass('flip');
+
                 //removing class of second_card_click
                 $(card_element).parent().removeClass('flip');
+
                 //resetting variables for next round of clicking.
                 first_card_clicked = null;
                 second_card_clicked = null;
+
                 //enabling mouse clicks on the game board
                 $('#game-area').removeAttr('style');
             }, 1500);
         }
         attempts++;
         display_stats();
+        lastClick = '';
     }
 }

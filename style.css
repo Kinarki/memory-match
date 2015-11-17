@@ -5,7 +5,7 @@ body {
     padding: 0;
     background: url('images/walking-background.jpg') no-repeat;
     background-size: 100% 100%;
-    perspective: 1000;
+    perspective: 1000px;
 }
 
 .about {
@@ -68,7 +68,7 @@ header {
     height: 80vh;
     width: 80vw;
     margin-left: 10vw;
-    perspective: 1000;
+    perspective: 1000px;
 }
 
 .card {
