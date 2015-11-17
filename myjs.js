@@ -6,7 +6,7 @@ var attempts =  0;
 var accuracy = 0;
 var games_played = 0;
 var time_start = false;
-var current_time = 45;
+var current_time = 60;
 var interval;
 var audio = new Audio('audio/theme.mp3');
 var music_flag = false;
@@ -100,7 +100,7 @@ function reset_stats () {
     accuracy = 0;
     matches = 0;
     attempts = 0;
-    current_time = 45;
+    current_time = 60;
     first_card_clicked = null;
     second_card_clicked = null;
     time_start = false;
@@ -121,7 +121,7 @@ function reset(){
     games_played++;
     $('.front').removeClass('hidden');
     $('.back').removeClass('hidden');
-    //$('.card').removeClass('flip');
+    $('.card').removeClass('flip').children().removeClass('flip');
 
     $(function () {
         var parent = $('#game-area');
@@ -168,13 +168,12 @@ function card_clicked(card_element) {
     }
 
 
-
-    //$(this).parent().addClass('flip');
-
-
+    //$(card_element).addClass('.flip');
+    $(card_element).parent().addClass('flip');
 
     //hiding the back image
-    $(card_element).addClass('hidden');
+    $(card_element).addClass('flip');
+
     //targeting source for matching
     var the_card = $(card_element).prev().attr('card_src');
     //checking if a card has been clicked yet
@@ -187,6 +186,7 @@ function card_clicked(card_element) {
         //checking for match
         if (first_card_clicked == second_card_clicked) {
             //audio
+            setTimeout(function(){
             switch(the_card) {
                 case 'card1':
                     rick.play();
@@ -210,7 +210,7 @@ function card_clicked(card_element) {
                     michonne.play();
                     break;
             }
-
+        }, 500);
             //loss condition
             if(second_card_clicked == 'cardZ') {
                 turned();
@@ -239,25 +239,29 @@ function card_clicked(card_element) {
                     $('.footer').addClass('hidden');
                     //show safe-zone image and play audio
                     $('.safe-zone').removeClass('hidden');
-                    win_audio.play();
-                    }, 2000);
+                    //win_audio.play();
+                    }, 2000, win_audio.play());
                 setTimeout(function() {
                     $("#game-area").removeClass('hidden');
                     $('.footer').removeClass('hidden');
                     $('.safe-zone').addClass('hidden');
+
+                    //win_audio.play();
+
+
+                    $('.card').removeClass('flip').children().removeClass('flip');
+
+
+
+
+
+
                     reset();
                 },6500);
             }
             //resetting variables for next round of match finding.
             first_card_clicked = null;
             second_card_clicked = null;
-
-
-
-            //$('.card').removeClass('.flip');
-
-
-
         } else {
             //disable mouse clicks on the game board while two cards are face up
             //works on all browsers save Opera Mini
@@ -265,9 +269,9 @@ function card_clicked(card_element) {
             //function to reset cards
             setTimeout(function () {
 
-                //$('.card').removeClass('flip');
 
 
+                $('.card').removeClass('flip').children().removeClass('flip');
 
 
 
@@ -280,7 +284,7 @@ function card_clicked(card_element) {
                 second_card_clicked = null;
                 //enabling mouse clicks on the game board
                 $('#game-area').removeAttr('style');
-            }, 1000);
+            }, 1500);
         }
         attempts++;
         display_stats();
