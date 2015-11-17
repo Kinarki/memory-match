@@ -32,7 +32,7 @@ function tick() {
     --current_time;
     $('.timer .value').html(" " + current_time);
 
-    //if (current_time <= 10) {
+    //if (current_time <= 10  && current_time > 0) {
     //
     //}
     if (current_time === 0) {
@@ -246,7 +246,7 @@ function card_clicked(card_element) {
                     $('.footer').removeClass('hidden');
                     $('.safe-zone').addClass('hidden');
                     reset();
-                },4500);
+                },6500);
             }
             //resetting variables for next round of match finding.
             first_card_clicked = null;
