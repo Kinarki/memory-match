@@ -121,7 +121,7 @@ function reset(){
     games_played++;
     $('.front').removeClass('hidden');
     $('.back').removeClass('hidden');
-    $('.card').removeClass('flip').children().removeClass('flip');
+    $('.card').removeClass('flip');
 
     $(function () {
         var parent = $('#game-area');
@@ -151,7 +151,6 @@ function turned() {
         $("#game-area").removeClass('hidden');
         $('.footer').removeClass('hidden');
         $(".pop-up").addClass('hidden');
-
         reset();
     },2000);
 }
@@ -166,14 +165,8 @@ function card_clicked(card_element) {
         }, 1000);
         time_start = true;
     }
-
-
     //$(card_element).addClass('.flip');
     $(card_element).parent().addClass('flip');
-
-    //hiding the back image
-    $(card_element).addClass('flip');
-
     //targeting source for matching
     var the_card = $(card_element).prev().attr('card_src');
     //checking if a card has been clicked yet
@@ -225,6 +218,9 @@ function card_clicked(card_element) {
             setTimeout(function () {
                 //hides matched pairs
                 $("[card_src='" + the_card + "']").addClass('hidden');
+                //hiding the back image
+                $("img[card_src='" + first_card_clicked + "']").next('img').addClass('hidden');
+                //$(card_element).addClass('hidden');
                 //enabling mouse clicks on the game board
                 $('#game-area').removeAttr('style');
             }, 1500);
@@ -239,23 +235,13 @@ function card_clicked(card_element) {
                     $('.footer').addClass('hidden');
                     //show safe-zone image and play audio
                     $('.safe-zone').removeClass('hidden');
-                    //win_audio.play();
-                    }, 2000, win_audio.play());
+                    }, 2000);
                 setTimeout(function() {
                     $("#game-area").removeClass('hidden');
                     $('.footer').removeClass('hidden');
                     $('.safe-zone').addClass('hidden');
-
-                    //win_audio.play();
-
-
-                    $('.card').removeClass('flip').children().removeClass('flip');
-
-
-
-
-
-
+                    win_audio.play();
+                    $('.card').removeClass('flip');
                     reset();
                 },6500);
             }
@@ -268,17 +254,10 @@ function card_clicked(card_element) {
             $('#game-area').css('pointer-events', 'none');
             //function to reset cards
             setTimeout(function () {
-
-
-
-                $('.card').removeClass('flip').children().removeClass('flip');
-
-
-
                 //target the back image and removing class of first_card_click
-                $("img[card_src='" + first_card_clicked + "']").next('img').removeClass('hidden');
+                $("img[card_src='" + first_card_clicked + "']").next('img').parent().removeClass('flip');
                 //removing class of second_card_click
-                $(card_element).removeClass('hidden');
+                $(card_element).parent().removeClass('flip');
                 //resetting variables for next round of clicking.
                 first_card_clicked = null;
                 second_card_clicked = null;
