@@ -167,8 +167,10 @@ function card_clicked(card_element) {
     }
     //$(card_element).addClass('.flip');
     $(card_element).parent().addClass('flip');
+
     //targeting source for matching
     var the_card = $(card_element).prev().attr('card_src');
+
     //checking if a card has been clicked yet
     if (first_card_clicked == null) {
         //saving first card for match comparison
@@ -176,6 +178,7 @@ function card_clicked(card_element) {
     } else {
         //saving second card for comparison
         second_card_clicked = the_card;
+
         //checking for match
         if (first_card_clicked == second_card_clicked) {
             //audio
@@ -204,23 +207,28 @@ function card_clicked(card_element) {
                     break;
             }
         }, 500);
+
             //loss condition
             if(second_card_clicked == 'cardZ') {
                 turned();
              return;
             }
+
             //disable mouse clicks on the game board while two cards are face up
             //works on all browsers save Opera Mini
             $('#game-area').css('pointer-events', 'none');
+
             //incrementing matches for win condition comparison
             matches++;
+
             //allot time for player to see that they got a match
             setTimeout(function () {
                 //hides matched pairs
                 $("[card_src='" + the_card + "']").addClass('hidden');
+
                 //hiding the back image
                 $("img[card_src='" + first_card_clicked + "']").next('img').addClass('hidden');
-                //$(card_element).addClass('hidden');
+
                 //enabling mouse clicks on the game board
                 $('#game-area').removeAttr('style');
             }, 1500);
@@ -252,15 +260,19 @@ function card_clicked(card_element) {
             //disable mouse clicks on the game board while two cards are face up
             //works on all browsers save Opera Mini
             $('#game-area').css('pointer-events', 'none');
+
             //function to reset cards
             setTimeout(function () {
                 //target the back image and removing class of first_card_click
                 $("img[card_src='" + first_card_clicked + "']").next('img').parent().removeClass('flip');
+
                 //removing class of second_card_click
                 $(card_element).parent().removeClass('flip');
+
                 //resetting variables for next round of clicking.
                 first_card_clicked = null;
                 second_card_clicked = null;
+
                 //enabling mouse clicks on the game board
                 $('#game-area').removeAttr('style');
             }, 1500);
