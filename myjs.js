@@ -8,7 +8,7 @@ var games_played = 0;
 var time_start = true;
 var current_time = 60;
 var interval;
-var lastClick = '';
+var last_click = '';
 var audio = new Audio('audio/theme.mp3');
 var music_flag = false;
 //var audio_array = [];
@@ -47,14 +47,14 @@ function resetInterval() {
 }
 
 //randomize cards
-$(function () {
-    var parent = $('#game-area');
-    var divs = parent.children();
-
-    while(divs.length){
-        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
-    }
-});
+//$(function () {
+//    var parent = $('#game-area');
+//    var divs = parent.children();
+//
+//    while(divs.length){
+//        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+//    }
+//});
 
 $(document).ready(function(){
     //music play/stop button
@@ -171,10 +171,10 @@ function card_clicked(card_element) {
     }
 
     //prevents spam clicks on first card
-    if(lastClick == card_element) {
+    if(last_click == card_element) {
         return;
     }
-    lastClick = card_element;
+    last_click = card_element;
 
     //$(card_element).addClass('.flip');
     $(card_element).parent().addClass('flip');
@@ -308,6 +308,6 @@ function card_clicked(card_element) {
         }
         attempts++;
         display_stats();
-        lastClick = '';
+        last_click = '';
     }
 }
