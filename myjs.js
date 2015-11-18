@@ -27,6 +27,7 @@ function start() {
     $('.start').addClass('hidden');
     $("#game-area").removeClass('hidden');
     $('.footer').removeClass('hidden');
+    $('walker-one').removeClass('hidden');
 }
 //timer function
 function tick() {
@@ -47,14 +48,14 @@ function resetInterval() {
 }
 
 //randomize cards
-//$(function () {
-//    var parent = $('#game-area');
-//    var divs = parent.children();
-//
-//    while(divs.length){
-//        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
-//    }
-//});
+$(function () {
+    var parent = $('#game-area');
+    var divs = parent.children();
+
+    while(divs.length){
+        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+    }
+});
 
 $(document).ready(function(){
     //music play/stop button

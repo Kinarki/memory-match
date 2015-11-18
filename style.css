@@ -209,3 +209,11 @@ footer {
     float: right;
     transform: rotateX(-35deg);
 }
+
+.walker-one {
+    position: absolute;
+    height: 12%;
+    left: 35%;
+    bottom: 8%;
+}
+
