@@ -30,6 +30,7 @@ body {
 }
 
 .pop-up {
+    z-index: 4;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -211,6 +212,7 @@ footer {
 }
 
 .walker-one {
+    z-index: 1;
     position: absolute;
     height: 12%;
     left: 18%;
@@ -218,6 +220,7 @@ footer {
 }
 
 .walker-two {
+    z-index: 1;
     position: absolute;
     height: 12%;
     left: 35%;
@@ -225,9 +228,10 @@ footer {
 }
 
 .walker-three {
+    z-index: 1;
     position: absolute;
     height: 12%;
     right: 26%;
-    bottom: 8%;
+    bottom: 7%;
 }
 
