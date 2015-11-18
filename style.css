@@ -213,7 +213,21 @@ footer {
 .walker-one {
     position: absolute;
     height: 12%;
+    left: 18%;
+    bottom: 5%;
+}
+
+.walker-two {
+    position: absolute;
+    height: 12%;
     left: 35%;
+    bottom: 10%;
+}
+
+.walker-three {
+    position: absolute;
+    height: 12%;
+    right: 26%;
     bottom: 8%;
 }
 

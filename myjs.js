@@ -25,9 +25,7 @@ var michonne = new Audio('audio/Michonne.mp3');
 //shows gameboard and stats.
 function start() {
     $('.start').addClass('hidden');
-    $("#game-area").removeClass('hidden');
-    $('.footer').removeClass('hidden');
-    $('walker-one').removeClass('hidden');
+    $('#game-area, .footer, .walker-one, .walker-two, .walker-three').removeClass('hidden');
 }
 //timer function
 function tick() {
